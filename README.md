@@ -1,11 +1,77 @@
-# Sample Snack app
+# Aplicativo Clima Tempo (Mock & API)
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Este projeto é um aplicativo de previsão do tempo desenvolvido em React Native com Expo. Ele permite consultar dados meteorológicos de cidades, operando tanto com dados reais da OpenWeatherMap API quanto com dados simulados (Mock) para fins de teste e desenvolvimento.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+> **Trabalho Final**
+> 
+> **Disciplina:** Laboratório de Desenvolvimento de Aplicativos Nativos
+> **Professor:** Fabricio Dias
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## 📋 Funcionalidades
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+O aplicativo possui as seguintes funcionalidades principais, identificadas no serviço de clima:
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+* **Busca por Cidade:** Permite pesquisar o clima digitando o nome da cidade.
+* **Modo Híbrido (Mock/Real):**
+    * **Modo Mock:** Gera dados aleatórios (temperatura, clima, vento) para testes sem necessidade de chave de API ou conexão. Tipos de clima simulados incluem "Clear", "Clouds", "Rain" e "Thunderstorm".
+    * **Modo API Real:** Conecta-se à API da OpenWeatherMap para buscar dados verídicos.
+* **Dados Exibidos:**
+    * Temperatura atual.
+    * Sensação térmica (*feels like*).
+    * Umidade.
+    * Velocidade do vento.
+    * Descrição do clima (com suporte a localização `pt_br`).
+* **Tratamento de Erros:** Gestão de erros para cidades não encontradas (404) ou chaves de API inválidas (401).
+
+## 🚀 Tecnologias Utilizadas
+
+As principais dependências listadas no `package.json` são:
+
+* **Core:** [React Native](https://reactnative.dev/), [Expo](https://expo.dev/), [React](https://react.dev/).
+* **UI/UX:**
+    * `react-native-paper`: Biblioteca de componentes de UI.
+    * `expo-linear-gradient`: Para fundos gradientes (provavelmente usado nos cartões de clima).
+    * `expo-blur`: Para efeitos de desfoque.
+    * `@expo/vector-icons`: Ícones vetoriais.
+
+## 📦 Instalação e Execução
+
+Pré-requisitos: Node.js e gerenciador de pacotes (npm ou yarn).
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    cd seu-repositorio
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    # ou
+    yarn install
+    ```
+
+3.  **Execute o projeto:**
+     Utilize os scripts configurados:
+    ```bash
+    npx expo start
+    ```
+    * Para rodar no Android: `npm run android`
+    * Para rodar no iOS: `npm run ios`
+    * Para rodar na Web: `npm run web`
+  
+## 🧪 Como Testar
+
+Caso queira testar o aplicativo diretamente, os arquivos necessários podem ser encontrados e baixados no arquivo compactado [Visão do Futuro](https://github.com/DanielMonteiroC/Aplicativo_clima_tempo_mock/blob/bf8d5a2f2ec22c1d8b29e1423ee3df575eb1dd45/Vis%C3%A3o%20do%20Futuro.7z)), disponível neste repositório.
+
+## ⚙️ Configuração da API
+
+O arquivo `WeatherService.js` já possui uma chave de API padrão configurada para testes, mas recomenda-se o uso de uma chave própria ou o uso do modo Mock para evitar limites de requisição.
+
+Para alterar a chave padrão, edite o arquivo `src/services/WeatherService.js`:
+
+```javascript
+const WeatherService = {
+  apiKey: 'SUA_CHAVE_AQUI', // Substitua pela sua chave da OpenWeatherMap
+  // ...
+};
