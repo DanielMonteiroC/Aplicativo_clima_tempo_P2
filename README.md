@@ -5,6 +5,7 @@ Este projeto é um aplicativo de previsão do tempo desenvolvido em React Native
 > **Trabalho Final**
 > 
 > **Disciplina:** Laboratório de Desenvolvimento de Aplicativos Nativos
+>
 > **Professor:** Fabricio Dias
 
 ## 📋 Funcionalidades
@@ -62,7 +63,7 @@ Pré-requisitos: Node.js e gerenciador de pacotes (npm ou yarn).
   
 ## 🧪 Como Testar
 
-Caso queira testar o aplicativo diretamente, os arquivos necessários podem ser encontrados e baixados no arquivo compactado [Visão do Futuro](https://github.com/DanielMonteiroC/Aplicativo_clima_tempo_mock/blob/bf8d5a2f2ec22c1d8b29e1423ee3df575eb1dd45/Vis%C3%A3o%20do%20Futuro.7z)), disponível neste repositório.
+Caso queira testar o aplicativo diretamente, o .apk pode ser baixado no arquivo compactado [Visão do Futuro](https://github.com/DanielMonteiroC/Aplicativo_clima_tempo_mock/blob/bf8d5a2f2ec22c1d8b29e1423ee3df575eb1dd45/Vis%C3%A3o%20do%20Futuro.7z)), disponível neste repositório.
 
 ## ⚙️ Configuração da API
 
